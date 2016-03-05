@@ -79,17 +79,17 @@ public class HomePageControllerTest extends BaseModuleWebContextSensitiveTest {
         List<Extension> extensions = new ArrayList<Extension>();
 
         Extension extension = new Extension("ext1", "app1", ReferenceApplicationConstants.HOME_PAGE_EXTENSION_POINT_ID, "link", "label", "url", 1);
-        extension.setRequire("hasMemberWithProperty(sessionLocation.tags, 'display', 'tag1')");
+        extension.setRequire("util.hasMemberWithProperty(sessionLocation.tags, 'display', 'tag1')");
         when(appFrameworkConfig.isEnabled(extension)).thenReturn(Boolean.TRUE);
         extensions.add(extension);
 
         extension = new Extension("ext2", "app1", ReferenceApplicationConstants.HOME_PAGE_EXTENSION_POINT_ID, "link", "label", "url", 2);
-        extension.setRequire("hasMemberWithProperty(sessionLocation.tags, 'display', 'tag2')");
+        extension.setRequire("util.hasMemberWithProperty(sessionLocation.tags, 'display', 'tag2')");
         when(appFrameworkConfig.isEnabled(extension)).thenReturn(Boolean.TRUE);
         extensions.add(extension);
 
         extension = new Extension("ext3", "app1", ReferenceApplicationConstants.HOME_PAGE_EXTENSION_POINT_ID, "link", "label", "url", 3);
-        extension.setRequire("hasMemberWithProperty(sessionLocation.tags, 'display', 'tag3')");
+        extension.setRequire("util.hasMemberWithProperty(sessionLocation.tags, 'display', 'tag3')");
         when(appFrameworkConfig.isEnabled(extension)).thenReturn(Boolean.TRUE);
         extensions.add(extension);
 
